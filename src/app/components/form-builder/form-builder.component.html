@@ -1,0 +1,18 @@
+<div class="flex">
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <input formControlName="username" [class.vy-invalid]="userForm.get('username')?.touched && userForm.get('username')?.invalid" class="vy-invalid" type="text" placeholder="username"/>
+      <!-- <small [class.vy-none]="userForm.get('username')?.untouched || userForm.get('username')?.valid" class="vy-invalid">User is required</small>
+      <small [class.vy-none]="userForm.get('username')?.untouched || userForm.get('username')?.valid" class="vy-invalid">User is required</small> -->
+      <div *ngIf="userForm.get('username')?.invalid && userForm.get('username')?.touched">
+        <small *ngIf="userForm.get('username')?.errors?.['required']" class="vy-invalid">User is required</small>
+        <small  *ngIf="userForm.get('username')?.errors?.['minlength']" class="vy-invalid">min length 3 is required</small>
+      </div>
+    <input formControlName="password" type="text" placeholder="password" />
+    <input formControlName="confirmPassword" type="text" placeholder="confirm password" />
+    <div formGroupName="address">
+      <input formControlName="street" type="text" placeholder="street" />
+      <input formControlName="post" type="text" placeholder="post" />
+      <input formControlName="city" type="text" placeholder="city" />
+    </div>
+  </form>
+</div>

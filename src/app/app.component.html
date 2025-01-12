@@ -1,0 +1,16 @@
+<app-custom-validator></app-custom-validator>
+
+<b></b>
+<b></b>
+<hr />
+
+<div *ngIf="isAvailable">Show this div</div>
+
+<ng-template [ngIf]="isAvailable">
+  <div>Show this div</div>
+</ng-template>
+
+<button (click)="toggle()">toggle</button>
+
+
+<div *appNgIf="_toggle"> Is it working appNgIf</div>

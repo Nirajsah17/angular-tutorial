@@ -1,0 +1,14 @@
+<form [formGroup]="userForm">
+  <input formControlName="userName" type="text" [class.vy-invalid]="userForm.get('userName')?.touched && userForm.get('userName')?.invalid"/>
+  <div *ngIf="userForm.get('userName')?.touched && userForm.get('userName')?.invalid">
+    <small *ngIf="userForm.get('userName')?.errors?.['required']" [class.vy-danger]="" class="vy-danger">Name is required</small>
+    <small *ngIf="userForm.get('userName')?.errors?.['minlength']" [class.vy-danger]="" class="vy-danger">min 3 is needed</small>
+    <small *ngIf="userForm.get('userName')?.errors?.['forbiddenName']" [class.vy-danger]="" class="vy-danger">Admin is not Allowed</small>
+  </div>
+  <p appHighLightText>hello what is this</p>
+  <p appRendererHighLight>hello what is this</p>
+  <p appBorder color="purple">What's Up</p>
+
+  <button (click)="changeColor()">change</button>
+  <p appHover [onLeave]="before" [onEnter]="after">Hover effect</p>
+</form>

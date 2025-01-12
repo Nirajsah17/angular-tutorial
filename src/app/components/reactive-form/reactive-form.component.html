@@ -1,0 +1,14 @@
+<form #user="ngForm" [formGroup]="register" (ngSubmit)="onSubmit()" class="flex">
+  <h3>User registration form</h3>
+  <input formControlName="username" type="text" placeholder="Username"/>
+  <input formControlName="password" type="password" placeholder="password"/>
+  <input formControlName="confirmPassword" type="password" placeholder="Confirm Password"/>
+  <div formGroupName="address">
+    <input formControlName="street" type="text" placeholder="street"/>
+    <input formControlName="post" type="text" placeholder="post office"/>
+    <input formControlName="city" type="text" placeholder="City"/>
+  </div>
+  <button type="submit">Register</button>
+  <button (click)="loadApi()">loadApi</button>
+  {{register.value | json}}
+</form>

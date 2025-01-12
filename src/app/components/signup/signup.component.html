@@ -1,0 +1,19 @@
+<div>
+  {{signup.value | json}}
+  <hr/>
+  {{userModel | json}}
+  <form  #signup="ngForm" (ngSubmit)="onSubmit()">
+    <input [class.vy-invalid]="name.invalid && name.touched" type="text" #name="ngModel" placeholder="name" name="name" [(ngModel)]="userModel.name" required/>
+    <span class="vy-danger" [class.vy-none]="name.valid && name.untouched">error</span>
+    <input type="text" placeholder="phone number" name="number" [(ngModel)]="userModel.number" required/>
+    <select  [class.vy-invalid]="topicHasError && topic.touched" #topic="ngModel" required (blur)="validateCourse(topic.value)" (change)="validateCourse(topic.value)" name="course" [(ngModel)]="userModel.course" required>
+      <option value="">Choose option</option>
+      <option *ngFor="let course of coureses" [value]="course">
+        {{course}}
+      </option>
+    </select>
+    <small class="vy-danger" [class.vy-none]="!topicHasError || topic.untouched">Please select course</small>
+    <input type="checkbox" name="declaration" placeholder="declartions" [(ngModel)]="userModel.declaration" required/>
+    <button [disabled]="signup.form.invalid || topicHasError" type="submit">Submit</button>
+  </form>
+</div>

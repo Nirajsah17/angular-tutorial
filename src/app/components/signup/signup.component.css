@@ -1,0 +1,12 @@
+.vy-invalid{
+  border: 2px solid red;
+  color: red;
+}
+
+.vy-none{
+  display: none;
+}
+
+.vy-danger{
+  color: red;
+}
