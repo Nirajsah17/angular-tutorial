@@ -13,6 +13,10 @@ import { RendererHighLightDirective } from './directive/renderer-high-light.dire
 import { BorderDirective } from './directive/border.directive';
 import { HoverDirective } from './directive/hover.directive';
 import { NgIfDirective } from './directive_structural/ng-if.directive';
+import { PracticePipeComponent } from './components/practice-pipe/practice-pipe.component';
+
+import { CustomPipe } from './custom.pipe';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +30,9 @@ import { NgIfDirective } from './directive_structural/ng-if.directive';
     BorderDirective,
     HoverDirective,
     NgIfDirective,
+    PracticePipeComponent,
+    CustomPipe,
+    RxjsComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
