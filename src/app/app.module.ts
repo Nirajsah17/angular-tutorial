@@ -17,6 +17,8 @@ import { PracticePipeComponent } from './components/practice-pipe/practice-pipe.
 
 import { CustomPipe } from './custom.pipe';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { LoginComponent } from './login/login.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     NgIfDirective,
     PracticePipeComponent,
     CustomPipe,
-    RxjsComponent
+    RxjsComponent,
+    LoginComponent,
+    ProfileComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],

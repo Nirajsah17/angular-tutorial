@@ -1,0 +1,4 @@
+<form #user="ngForm">
+  <input type="text" #name="ngModel" name="name" [(ngModel)]="name"/>
+  <button (click)="onSubmitLogin(name.value)">login</button>
+</form>
