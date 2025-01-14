@@ -19,6 +19,9 @@ import { CustomPipe } from './custom.pipe';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
+import { HomeComponent } from './components/home/home.component';
+import { UsersComponent } from './components/users/users.component';
+import { CAtegoriesComponent } from './components/categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,10 @@ import { ProfileComponent } from './profile/profile.component';
     CustomPipe,
     RxjsComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    HomeComponent,
+    UsersComponent,
+    CAtegoriesComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
