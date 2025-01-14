@@ -2,4 +2,4 @@
   {{user |json}}
 </div>
 
-<a [routerLink]="['/users', '342345', 'pravin']">get pravin data</a>
+<a [routerLink]="['/users', '342345', 'pravin']" [queryParams]="{page:1, search: 'niraj'}" fragment="load">get pravin data</a>
