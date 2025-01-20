@@ -2,6 +2,7 @@ import { Component , OnInit, OnDestroy} from '@angular/core';
 import { ActivatedRoute, Data } from '@angular/router';
 import { filter, interval, map, Observable } from 'rxjs';
 import { SharedDataService } from '../shared-data.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-rxjs',
@@ -9,8 +10,9 @@ import { SharedDataService } from '../shared-data.service';
   styleUrl: './rxjs.component.css'
 })
 export class RxjsComponent implements OnInit, OnDestroy {
+  greeting = '';
   _interval:any; 
-  constructor(private router:ActivatedRoute, private sharedService: SharedDataService) {}
+  constructor(private router:ActivatedRoute, private sharedService: SharedDataService, private userService: UserService) {}
   count:number = 0;
   ngOnInit():void {
 
@@ -42,6 +44,11 @@ export class RxjsComponent implements OnInit, OnDestroy {
     // customObservable.subscribe((data:any)=>{console.log(data)}, (error:any)=>{console.log(error)}, ()=>{console.log('Completed')});
     this._interval = customObservable.pipe(filter(((data:any)=> data > 1)), map((data:any)=>  data+1)).subscribe((data:any)=>{
       console.log(data);
+    })
+
+    this.userService.greeting.subscribe((data)=>{
+      console.log(data)
+      this.greeting = data;
     })
   };
 
